@@ -1,10 +1,12 @@
 # Interoperability Fortran - C
 
-## Dimitris Files
+This repository is part of a project consisting in studying, analysing and conducting an effective communication between *Fortran* and *Simulink*, in order to couple **wind turbine controllers** implemented in *Simulink* with the **servo-hydro-aero-elastic software tool _hGAST_**, whose source code is written in *Fortran*. 
 
-The folder [initial_tests](./initial_tests) contains the first tests conducted to understand the dynamic libraries load and call process. These tests were conducted by *Dr. Manolas*, from the *National Technical University of Athens*, with the help in [Version 2](https://github.com/carlospmo/InteroperabilityFortranC/blob/main/README.md#version-2) of *Prof. Dr. Gallego*, from the *Polytechnic University of Madrid*.
+## Initial Tests with Dynamic Libraries
 
-### Version 1
+The folder [initial_tests](./initial_tests) contains the first tests conducted to understand the dynamic libraries load and call process. These tests were conducted by *Dr. Manolas*, from the *National Technical University of Athens*, with the help in [Version 2](https://github.com/carlospmo/InteroperabilityFortranC/blob/main/README.md#version-2) of *Prof. Dr. Gallego*, from the *Polytechnic University of Madrid*, who generated a shared library from *MATLAB*.
+
+### Version 1. Shared libraries generated from C
 
 In the **Version 1** the *shared library* is created from the file [test.c](./initial_tests/version1/test.c), containing a series of functions. The file [example.f90](./initial_tests/version1/example.f90) contains the code in *Fortran* used for loading the shared library and calling its procedures.
 
@@ -20,5 +22,6 @@ Then, to compile the *Fortran* code on Windows simply type
 gfortran example_v2.f90 -lknernel32 -o example.exe
 ```
 
-### Version 2
+### Version 2. Shared libraries generated from MATLAB
 
+In this case, the shared library is generated directly from *MATLAB*
