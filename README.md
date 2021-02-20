@@ -1,8 +1,8 @@
-# Interoperability Fortran C
+# Interoperability Fortran - C
 
 ## Dimitris Files
 
-The folder [initial_tests](./initial_tests) contains the first tests conducted to understand the dynamic libraries load and call process.
+The folder [initial_tests](./initial_tests) contains the first tests conducted to understand the dynamic libraries load and call process. These tests were conducted by *Dr. Manolas*, from the *National Technical University of Athens*, with the help in [Version 2](https://github.com/carlospmo/InteroperabilityFortranC/blob/main/README.md#version-2) of *Prof. Dr. Gallego*, from the *Polytechnic University of Madrid*.
 
 ### Version 1
 
