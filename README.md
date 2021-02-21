@@ -2,6 +2,14 @@
 
 This repository is part of a project consisting in studying, analysing and conducting an effective communication between *Fortran* and *Simulink*, in order to couple **wind turbine controllers** implemented in *Simulink* with the **servo-hydro-aero-elastic software tool _hGAST_**, whose source code is written in *Fortran*. 
 
+## Linking in load time
+
+The first step in mixed programming is to link *C-procedures* with *Fortran* during the compilation, and viceversa. The folder [link_during_compilation](./link_during_compilation) contains one example of each case. For instance, the code [fortran_calls_c.f90](./link_during_compilation/fortran_calls_c.f90) calls the *C-function* `calc(*a, *b, *c)` defined in the file [calc.c](./link_during_compilation/calc.c). The compilation and linking commands for this case are
+```
+gcc -c calc.c
+gfortran fortran_calls_c.f90 calc.o
+```
+
 ## Initial Tests with Dynamic Libraries
 
 The folder [initial_tests](./initial_tests) contains the first tests conducted to understand the dynamic libraries load and call process. These tests were conducted by *Dr. Manolas*, from the *National Technical University of Athens*, with the help in [Version 2](https://github.com/carlospmo/InteroperabilityFortranC/blob/main/README.md#version-2) of *Prof. Dr. Gallego*, from the *Polytechnic University of Madrid*, who generated a shared library from *MATLAB*.
