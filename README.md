@@ -44,4 +44,8 @@ In this case, the shared library is generated directly from a *MATLAB* code for 
 
 ## C calling shared libraries
 
-Despite not being in the scope of the project, some tests are performed for loading shared libraries from *C*. The 
+Despite not being in the scope of the project, some tests are performed for loading shared libraries from *C*. The folder [C_load_dll](./C_load_dll) contains the examples for loading and calling a shared library in *Unix* and *Windows* from *C*.
+
+### Calling a shared library in *Windows*
+
+### Calling a shared library in *Unix*
