@@ -24,4 +24,4 @@ gfortran example_v2.f90 -lknernel32 -o example.exe
 
 ### Version 2. Shared libraries generated from MATLAB
 
-In this case, the shared library is generated directly from *MATLAB*
+In this case, the shared library is generated directly from a *MATLAB* code for a *Model Predictive Controller*, the file [mi_MPC.so](./initial_tests/version2/mi_MPC.so) is the shared library generated in *Unix*, and the file [mpcmoveCodeGeneration_types.h](./initial_tests/version2/mpcmoveCodeGeneration_types.h) is the header file where the data types used in the procedure are declared. To inspect the symbols of the shared library and obtain useful information, such as the name of the procedure, one can run the command in *Unix* `nm -D mi_MPC.so`. In *Windows* the program [Dependency Walker](https://www.dependencywalker.com/) can be used for the same purpose.
