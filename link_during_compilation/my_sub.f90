@@ -1,0 +1,8 @@
+SUBROUTINE my_sub(a, b, c) BIND(C)
+	USE, INTRINSIC :: ISO_C_BINDING
+	IMPLICIT NONE
+	REAL(C_FLOAT) :: a, b, c
+	
+	c = a * b
+	
+END SUBROUTINE my_sub
