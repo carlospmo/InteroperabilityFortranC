@@ -24,7 +24,7 @@ The folder [initial_tests](./initial_tests) contains the first tests conducted t
 
 ### Version 1. Shared libraries generated from C
 
-In the **Version 1** the *shared library* is created from the file [test.c](./initial_tests/version1/test.c), containing a series of functions. The file [example.f90](./initial_tests/version1/example.f90) contains the code in *Fortran* used for loading the shared library and calling its procedures.
+In the **Version 1** the *shared library* is created from the file [test.c](./initial_tests/version1/test.c), containing a series of functions in *C*. The file [example.f90](./initial_tests/version1/example.f90) contains the code in *Fortran* used for loading the shared library and calling its procedures.
 
 The batch file [create.bat](./initial_tests/version1/create.bat) can be executed to generate the shared library, compile [example.f90](./initial_tests/version1/example.f90) and execute the output file in *Unix*.
 
@@ -41,3 +41,7 @@ gfortran example_v2.f90 -lknernel32 -o example.exe
 ### Version 2. Shared libraries generated from MATLAB
 
 In this case, the shared library is generated directly from a *MATLAB* code for a *Model Predictive Controller*, the file [mi_MPC.so](./initial_tests/version2/mi_MPC.so) is the shared library generated in *Unix*, and the file [mpcmoveCodeGeneration_types.h](./initial_tests/version2/mpcmoveCodeGeneration_types.h) is the header file where the data types used in the procedure are declared. To inspect the symbols of the shared library and obtain useful information, such as the name of the procedure, one can run the command in *Unix* `nm -D mi_MPC.so`. In *Windows* the program [Dependency Walker](https://www.dependencywalker.com/) can be used for the same purpose.
+
+## C calling shared libraries
+
+Despite not being in the scope of the project, some tests are performed for loading shared libraries from *C*. The 
