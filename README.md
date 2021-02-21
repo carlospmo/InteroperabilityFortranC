@@ -10,6 +10,14 @@ gcc -c calc.c
 gfortran fortran_calls_c.f90 calc.o
 ```
 
+On the other hand, the code [cmain.c](./link_during_compilation/cmain.c) calls the *Fortran subroutine* `my_sub(a, b, c)` from the file [my_sub.f90](./link_during_compilation/my_sub.f90). To compile and link the following commands can be used
+```
+gfortran -c my_sub.f90
+gcc cmain.c my_sub.o
+```
+
+As it can be easily appreciated, in both cases first an *object file* is generated for the external procedure, and then the object file is linked to the main code during the compilation of the latter.
+
 ## Initial Tests with Dynamic Libraries
 
 The folder [initial_tests](./initial_tests) contains the first tests conducted to understand the dynamic libraries load and call process. These tests were conducted by *Dr. Manolas*, from the *National Technical University of Athens*, with the help in [Version 2](https://github.com/carlospmo/InteroperabilityFortranC/blob/main/README.md#version-2) of *Prof. Dr. Gallego*, from the *Polytechnic University of Madrid*, who generated a shared library from *MATLAB*.
