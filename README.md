@@ -59,3 +59,19 @@ gcc -Wall call_c_dll.c -lkernel32 -o calldll.exe
 ```
 
 ### Calling a shared library in *Unix*
+
+The code to call a shared library in *Unix* has to be slightly modified, as the *Unix API* for loading shared libraries has to be used. The code [call_c_so.c](./C_load_dll/call_c_so.c) contains the code to call a shared library generated from the file [c_functions.c](./C_load_dll/c_functions.c), by using the command
+
+```
+gcc -shared -fPIC -o libmylib.so c_functions.c
+```  
+whereas the executable is generated as 
+```
+gcc call_c_so.c -ldl -o callso.out
+```
+
+The file [call_fortran_so.c](./C_load_dll/call_fortran_so.c) contains a similar code, in this case a *Fortran-shared library* is called. The command to generate a shared library from a Fortran function or subroutine is fairly similar to the case of *C*,
+```
+gfortran -shared -fPIC -o libmylib.so mysub.f90
+```
+
